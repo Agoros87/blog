@@ -8,6 +8,8 @@
 
 </head>
 <body class="font-sans antialiased dark:bg-black dark:text-white/50">
+@include('partials.navigation')
 <h1>Blog</h1>
 </body>
+
 </html>
