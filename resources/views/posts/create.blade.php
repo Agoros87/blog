@@ -3,22 +3,28 @@
 
     <h1>Create a new Post</h1>
 
-    @foreach($errors->all() as $error)
-        <p>{{$error}}</p>
-    @endforeach
-    
     <form method="post" action="{{route('posts.store')}}">
         @csrf
         <label>
             Title <br/>
-            <input type="text" name="title"  >
+            <input type="text" name="title" value="{{ old('title') }}" >
+
+            @error('title')
+            <br/>
+            <small style="color:red">{{$message}}</small>
+            @enderror
 
         </label>
         <br/>
 
         <label>
             Body <br/>
-            <textarea name="body"  ></textarea>
+            <textarea name="body"  >{{old('body')}}</textarea>
+
+            @error('body')
+            <br/>
+            <small style="color:red">{{$message}}</small>
+            @enderror
 
         </label>
         <br/>
