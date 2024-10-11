@@ -47,5 +47,15 @@ class PostController extends Controller
       // return redirect()->route('posts.index'); otra manera como el toroute pero mas larga
         return to_route('posts.index');
     }
+
+    public function edit(Post $post)
+    {
+        return view('posts.edit', compact('post'));
+    }
+
+    public function update(Post $post, Request $request)
+    {
+
+    }
 }
 
