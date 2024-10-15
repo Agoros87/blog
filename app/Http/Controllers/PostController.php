@@ -53,9 +53,19 @@ class PostController extends Controller
         return view('posts.edit', compact('post'));
     }
 
-    public function update(Post $post, Request $request)
+    public function update(Request $request, Post $post)
     {
-        return "Estoy en el metodo update";
+       $request->validate([
+           'title' => 'required|min:5',
+           'body' => 'required',
+       ]);
+
+       $post->title = $request->input('title');
+       $post->body = $request->input('body');
+       $post->save();
+
+       session()->flash('status', 'Post updated successfully!');
+       return to_route('posts.show', $post);
     }
 }
 
