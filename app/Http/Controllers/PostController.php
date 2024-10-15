@@ -55,7 +55,7 @@ class PostController extends Controller
 
     public function update(Post $post, Request $request)
     {
-
+        return "Estoy en el metodo update";
     }
 }
 

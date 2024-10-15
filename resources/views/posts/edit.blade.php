@@ -7,6 +7,7 @@
 
     <form method="post" action="{{route('posts.update',$post)}}">
         @csrf
+        @method('PATCH')
         <label>
             {{__('Title')}} <br/>
             <input type="text" name="title" value="{{ old('title', $post->title) }}" >
