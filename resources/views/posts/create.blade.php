@@ -7,7 +7,9 @@
         @csrf
 
         @include('posts.form-fields')
-
+        <br />
+        <button type="submit">{{ __('Send') }}</button>
+        <br />
     </form>
     <a href="{{route('posts.index')}}">{{__('Back')}}</a>
 </x-layout>

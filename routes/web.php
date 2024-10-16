@@ -11,7 +11,7 @@ Route::view('contacto', "contact")->name("contact");
 
 Route::resource('blog', PostController::class)
     ->names("posts")
-    ->parameters(['blog' => 'posts']);
+    ->parameters(['blog' => 'post']);
 
 Route::view('nosotros', "about")->name("about");
 

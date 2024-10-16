@@ -20,6 +20,4 @@
     @enderror
 
 </label>
-<br/>
-<button type="submit">{{__('Send')}}</button>
-<br/>
+
